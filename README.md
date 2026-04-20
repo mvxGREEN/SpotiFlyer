@@ -14,7 +14,7 @@
 
 This app does NOT download music directly from Spotify.  Instead, it retrieves the metadata of desired track(s) (title, artist, album, duration, etc..) from Spotify.  Then, it uses the metadata to search and download the closest match from **Soulseek** or **yt-dlp**.
 
-Supports track, album and playlist URLs.
+Supports track, album and playlist URLs.  Usually.
 
 ## 📸 Screenshots
 
