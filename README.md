@@ -21,7 +21,7 @@ Instead, it retrieves the metadata of your desired track(s) (title, artist, albu
 <p align="center">
   <img src="assets/Screenshot 1.png" width="160"/>
   &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="assets/Screenshot 2.png" width="160"/>
+  <img src="assets/Screenshot2.png" width="160"/>
   &nbsp;&nbsp;&nbsp;&nbsp;
   <img src="assets/Screenshot 3.png" width="160"/>
   &nbsp;&nbsp;&nbsp;&nbsp;
