@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="spacing_xsmall">2dp</dimen>
+    <dimen name="spacing_small">4dp</dimen>
+    <dimen name="spacing_med">8dp</dimen>
+    <dimen name="spacing_large">16dp</dimen>
+    <dimen name="spacing_xlarge">24dp</dimen>
+    <dimen name="spacing_xxxlarge">64dp</dimen>
+    <dimen name="spacing_xxxxlarge">72dp</dimen>
+
+    <dimen name="elevation_popup">30dp</dimen>
+    <dimen name="elevation_top">24dp</dimen>
+    <dimen name="elevation_higher">20dp</dimen>
+    <dimen name="elevation_high">16dp</dimen>
+    <dimen name="elevation_mid_high">14dp</dimen>
+    <dimen name="elevation_middle">12dp</dimen>
+    <dimen name="elevation_mid_low">10dp</dimen>
+    <dimen name="elevation_low">8dp</dimen>
+    <dimen name="elevation_bottom">0dp</dimen>
+
+    <dimen name="size_imagebutton_primary">48dp</dimen>
+    <dimen name="size_imagebutton_peripheral">28dp</dimen>
+    <dimen name="size_logo_about">96dp</dimen>
+    <dimen name="size_item_image_app">72dp</dimen>
+
+    <dimen name="height_preview_card">372dp</dimen>
+    <dimen name="height_search_bar">48dp</dimen>
+    <dimen name="height_fragment_big">520dp</dimen>
+    <dimen name="height_fragment_file">80dp</dimen>
+    <dimen name="height_toolbar">56dp</dimen>
+    <dimen name="height_recycler_item_app">96dp</dimen>
+
+    <dimen name="width_fragment_large">368dp</dimen>
+    <dimen name="width_edittext_filename_min">38dp</dimen>
+    <dimen name="width_edittext_filename_max">76dp</dimen>
+    <dimen name="width_edittext_songtitle">152dp</dimen>
+
+    <dimen name="corner_radius_primary">8dp</dimen>
+    <dimen name="corner_radius_secondary">4dp</dimen>
+
+    <dimen name="text_size_frag_title">22sp</dimen>
+    <dimen name="text_size_frag_body">16sp</dimen>
+    <dimen name="text_size_frag_body_small">14sp</dimen>
+    <dimen name="text_size_spinner">22sp</dimen>
+    <dimen name="text_size_secondary">24sp</dimen>
+
+    <dimen name="none">0dp</dimen>
+    <dimen name="size_item_image_file">64dp</dimen>
+    <dimen name="text_size_primary">22sp</dimen>
+    <dimen name="size_artwork_iv">152dp</dimen>
+    <dimen name="width_edittext">164dp</dimen>
+    <dimen name="height_panel_buttons">64dp</dimen>
+    <dimen name="height_fragment_large">480dp</dimen>
+    <dimen name="width_panel_pb">140dp</dimen>
+    <dimen name="height_panel_pb">48dp</dimen>
+
+</resources>
