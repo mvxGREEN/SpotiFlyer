@@ -27,8 +27,8 @@
 		<ApplicationId>com.mvxgreen.spotifydownloader</ApplicationId>
 
 		<!-- Versions -->
-		<ApplicationDisplayVersion>4.4.4</ApplicationDisplayVersion>
-		<ApplicationVersion>92</ApplicationVersion>
+		<ApplicationDisplayVersion>4.5.1</ApplicationDisplayVersion>
+		<ApplicationVersion>93</ApplicationVersion>
 
 		<!-- 
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
