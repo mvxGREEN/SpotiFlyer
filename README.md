@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/launcher_spotiflyer_round.png" alt="SpotiFlyer Round App Icon" width="180"/>
+</p>
+
 # SpotiFlyer 🎵⬇️
 
 [![Build Status](https://img.shields.io/badge/Build-Passing-brightgreen.svg)](https://github.com/mvxGREEN/SpotiFlyer/actions)
@@ -15,13 +19,13 @@ Instead, it retrieves the metadata of your desired track(s) (title, artist, albu
 ## 📸 Screenshots
 
 <p align="center">
-  <img src="assets/Screenshot 1.png" width="180"/>
+  <img src="assets/Screenshot 1.png" width="160"/>
   &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="assets/Screenshot 2.png" width="180"/>
+  <img src="assets/Screenshot 2.png" width="160"/>
   &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="assets/Screenshot 3.png" width="180"/>
+  <img src="assets/Screenshot 3.png" width="160"/>
   &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="assets/Screenshot 4.png" width="180"/>
+  <img src="assets/Screenshot 4.png" width="160"/>
 </p>
 
 ## ✨ Features
