@@ -12,9 +12,7 @@
 
 **SpotiFlyer** is an Android application built with the [.NET MAUI](https://learn.microsoft.com/en-us/dotnet/maui/) framework designed to help you download your favorite Spotify tracks for offline listening. 
 
-SpotiFlyer does not download music directly from Spotify.  
-
-Instead, it retrieves the metadata of your desired track(s) (title, artist, album, duration, etc..) from Spotify.  Then it uses that metadata to find and download the closest match using **Soulseek** or **yt-dlp**.
+SpotiFlyer does not download music directly from Spotify.  Instead, it retrieves the metadata of your desired track(s) (title, artist, album, duration, etc..) from Spotify.  Then it uses that metadata to find and download the closest match using **Soulseek** or **yt-dlp**.
 
 ## 📸 Screenshots
 
