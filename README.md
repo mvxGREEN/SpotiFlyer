@@ -23,8 +23,6 @@ Instead, it retrieves the metadata of your desired track(s) (title, artist, albu
   &nbsp;&nbsp;&nbsp;&nbsp;
   <img src="assets/Screenshot2.png" width="180"/>
   &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="assets/Screenshot3.png" width="180"/>
-  &nbsp;&nbsp;&nbsp;&nbsp;
   <img src="assets/Screenshot4.png" width="180"/>
 </p>
 
