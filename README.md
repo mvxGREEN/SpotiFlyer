@@ -47,7 +47,7 @@ Supports track, album and playlist URLs.  Usually.
 
 2. Open APK file to install.
 
-3. Done!  Open **SpotiFLyer** app to start downloading audio from Spotify.
+3. Done!  Open **SpotiFlyer** app to start downloading audio from Spotify.
 
 ## 💻 Build App from Source Code
 
