@@ -19,11 +19,11 @@ Instead, it retrieves the metadata of your desired track(s) (title, artist, albu
 ## 📸 Screenshots
 
 <p align="center">
-  <img src="assets/Screenshot 1.png" width="180"/>
+  <img src="assets/Screenshot 1.png" width="200"/>
   &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="assets/Screenshot2.png" width="180"/>
+  <img src="assets/Screenshot2.png" width="200"/>
   &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="assets/Screenshot4.png" width="180"/>
+  <img src="assets/Screenshot4.png" width="200"/>
 </p>
 
 ## ✨ Features
