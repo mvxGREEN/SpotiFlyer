@@ -779,7 +779,7 @@ namespace SpotiFlyerMaui
 
             ExtractTitle(title);
 
-            ExtractAlbumArtist(title);
+            ExtractAlbumArtist(title, body);
 
             if (MArtist.Length == 0)
             {
@@ -852,39 +852,9 @@ namespace SpotiFlyerMaui
                         title = title.Replace(c, string.Empty);
                     }
 
-                    string artist = MArtist;
-                    if (!Spotiflyer.MIsAlbum)
-                    {
-                        // extract track artist, if not album
-                        s = body.IndexOf("<span", end);
-                        s = body.IndexOf(">", s) + 1;
-                        int l = body.IndexOf("</", s) - s;
-                        artist = body.Substring(s, l);
-
-                        // check if accidentally grabbed wrong span
-                        if (artist.Contains("<span"))
-                        {
-                            // move past current span & try again
-                            end = s + l;
-                            s = body.IndexOf("<span", end);
-                            s = body.IndexOf(">", s) + 1;
-                            l = body.IndexOf("</", s) - s;
-                            artist = body.Substring(s, l);
-                        }
-
-                        // fix ampersand
-                        if (artist.Contains("&amp;"))
-                        {
-                            artist.Replace("&amp;", "&");
-                        }
-                        // trim to first artist
-                        if (artist.Contains(","))
-                        {
-                            Console.WriteLine("multiple artists detected");
-                            artist = artist.Substring(0, artist.IndexOf(","));
-                        }
-                        Console.WriteLine($"{Tag} extracted playlist track artist: artist={artist}");
-                    }
+                    // Fetch the specific artist for this track, using the global MArtist as a fallback
+                    string artist = ExtractTrackArtist(body, end, MArtist);
+                    Console.WriteLine($"{Tag} final extracted track artist: artist={artist}");
 
                     // build input string
                     string input = $"title={title},artist={artist}";
@@ -945,27 +915,93 @@ namespace SpotiFlyerMaui
             }
         }
 
-        private void ExtractAlbumArtist(string title)
+        private string ExtractTrackArtist(string body, int trackTitleEndIndex, string fallbackArtist)
         {
-            // extract artist for track
+            string artist = fallbackArtist;
+            try
+            {
+                // Limit search scope so we don't accidentally grab the artist of the NEXT track
+                int nextTrackIndex = body.IndexOf("\"/track/", trackTitleEndIndex);
+                if (nextTrackIndex == -1) nextTrackIndex = body.Length;
+
+                // 1. Check for Spotify's explicit artist link
+                int artistLinkIndex = body.IndexOf("href=\"/artist/", trackTitleEndIndex);
+
+                if (artistLinkIndex > -1 && artistLinkIndex < nextTrackIndex)
+                {
+                    int start = body.IndexOf(">", artistLinkIndex) + 1;
+                    int end = body.IndexOf("</", start);
+                    artist = body.Substring(start, end - start);
+                }
+                // 2. Fallback to finding the first valid span (for some older UI variants)
+                else
+                {
+                    int spanIndex = body.IndexOf("<span", trackTitleEndIndex);
+                    if (spanIndex > -1 && spanIndex < nextTrackIndex)
+                    {
+                        int start = body.IndexOf(">", spanIndex) + 1;
+                        int length = body.IndexOf("</", start) - start;
+                        artist = body.Substring(start, length);
+
+                        // Skip nested spans if we accidentally grabbed a wrapper
+                        if (artist.Contains("<span"))
+                        {
+                            spanIndex = body.IndexOf("<span", spanIndex + length);
+                            if (spanIndex > -1 && spanIndex < nextTrackIndex)
+                            {
+                                start = body.IndexOf(">", spanIndex) + 1;
+                                length = body.IndexOf("</", start) - start;
+                                artist = body.Substring(start, length);
+                            }
+                        }
+                    }
+                }
+
+                // 3. Clean up HTML entities and illegal file characters
+                artist = artist.Replace("&amp;", "&");
+                foreach (var c in CharsToRemove)
+                {
+                    artist = artist.Replace(c, string.Empty);
+                }
+
+                // 4. Trim to primary artist if multiple are comma-separated
+                if (artist.Contains(","))
+                {
+                    artist = artist.Substring(0, artist.IndexOf(","));
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"{Tag} Error extracting track artist: {ex.Message}");
+            }
+
+            Console.WriteLine($"ExtractTrackArtist: artist={artist}");
+
+            return string.IsNullOrWhiteSpace(artist) ? fallbackArtist : artist.Trim();
+        }
+
+        private void ExtractAlbumArtist(string title, string html)
+        {
+            Console.WriteLine("ExtractAlbumArtist");
+
+            // Attempt to grab the global artist from the page title
             if (title.Contains(" by ") && title.Contains(" | "))
             {
                 int si = title.LastIndexOf(" by ") + 4;
-                string artist = title.Substring(si,
-                    title.LastIndexOf(" | ") - si);
+                string artist = title.Substring(si, title.LastIndexOf(" | ") - si);
 
                 foreach (var c in CharsToRemove)
                 {
                     artist = artist.Replace(c, string.Empty);
                 }
 
-                MArtist = artist;
-                Console.WriteLine($"{Tag} MArtist={MArtist}");
-
+                MArtist = artist.Trim();
+                Console.WriteLine($"{Tag} Global Fallback MArtist={MArtist}");
             }
             else
             {
-                Log.Error(Tag, "failed to find artist!");
+                MArtist = "Unknown Artist"; // Safe fallback if title doesn't contain it
+                Console.WriteLine($"{Tag} No global artist found in title.");
             }
         }
 
