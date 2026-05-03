@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/launcher_spotiflyer_round.png" alt="SpotiFlyer Round App Icon" width="180"/>
+</p>
+
 # SpotiFlyer 🎵⬇️
 
 [![Build Status](https://img.shields.io/badge/Build-Passing-brightgreen.svg)](https://github.com/mvxGREEN/SpotiFlyer/actions)
@@ -8,13 +12,19 @@
 
 **SpotiFlyer** is an Android application built with the [.NET MAUI](https://learn.microsoft.com/en-us/dotnet/maui/) framework designed to help you download your favorite Spotify tracks for offline listening. 
 
-SpotiFlyer does not download music directly from Spotify.  
+This app does NOT download music directly from Spotify.  Instead, it retrieves the metadata of desired track(s) (title, artist, album, duration, etc..) from Spotify.  Then, it uses the metadata to search and download the closest match from **Soulseek** or **yt-dlp**.
 
-Instead, it retrieves the metadata of your desired track(s) (title, artist, album, duration, etc..) from Spotify.  Then it uses that metadata to find and download the closest match using **Soulseek** or **yt-dlp**.
+Supports track, album and playlist URLs.  Usually.
 
 ## 📸 Screenshots
 
-
+<p align="center">
+  <img src="assets/Screenshot 1.png" width="200"/>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="assets/Screenshot2.png" width="200"/>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="assets/Screenshot4.png" width="200"/>
+</p>
 
 ## ✨ Features
 
@@ -31,20 +41,13 @@ Instead, it retrieves the metadata of your desired track(s) (title, artist, albu
 * **Target Platform**: Android (via .NET MAUI)
 * **IDE**: Visual Studio / Visual Studio for Mac
 
-## 💡 How It Works
-
-1. **Input:** Provide a Spotify track link within the app.
-2. **Metadata Scraping:** SpotiFlyer fetches the exact track metadata (Title, Artist, Album).
-3. **Search & Match:** The app forwards this metadata to its search engines (Soulseek, then yt-dlp) to find an identical download.
-4. **Download:** The closest match is then downloaded straight to your Android device.
-
 ## ⚡️ Quick Start App
 
 1. Download latest APK from [Releases](https://github.com/mvxGREEN/SpotiFLyer/releases) to an Android device.
 
 2. Open APK file to install.
 
-3. Done!  Open **SpotiFLyer** app to start downloading audio from Spotify.
+3. Done!  Open **SpotiFlyer** app to start downloading audio from Spotify.
 
 ## 💻 Build App from Source Code
 
@@ -68,6 +71,22 @@ Instead, it retrieves the metadata of your desired track(s) (title, artist, albu
 4. **Run the App**
    * In the top toolbar, ensure the build target is set to an Android Emulator or your connected local Android device.
    * Click the **Play (Start Debugging)** button or press `F5` to build and deploy the app.
+
+## 💡 Usage
+
+0. Copy target URL from Spotify
+1. Open SpotiFlyer app on your Android device.
+2. Paste target URL.
+3. Tap the download button.
+
+Done!  Audio will download to your Android device's local storage.
+
+## ⚙️ How It Works
+
+1. **Input:** Provide a Spotify track link within the app.
+2. **Metadata Scraping:** SpotiFlyer fetches the exact track metadata (Title, Artist, Album).
+3. **Search & Match:** The app forwards this metadata to its search engines (Soulseek, then yt-dlp) to find an identical download.
+4. **Download:** The closest match is then downloaded straight to your Android device.
 
 ## 📄 License
 
