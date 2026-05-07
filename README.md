@@ -4,6 +4,10 @@
 
 # SpotiFlyer 🎵⬇️
 
+<a href="https://apps.obtainium.imranr.dev/redirect.html?r=obtainium://add/https://github.com/mvxGREEN/SpotiFlyer">
+    <img src="https://raw.githubusercontent.com/ImranR98/Obtainium/main/assets/graphics/badge_obtainium.png" width="200" alt="Get it from Obtainium">
+</a>
+
 [![Build Status](https://img.shields.io/badge/Build-Passing-brightgreen.svg)](https://github.com/mvxGREEN/SpotiFlyer/actions)
 ![License](https://img.shields.io/github/license/mvxGREEN/SpotiFlyer)
 [![Language: C#](https://img.shields.io/badge/Language-C%23-blue.svg)](https://learn.microsoft.com/en-us/dotnet/csharp/)
